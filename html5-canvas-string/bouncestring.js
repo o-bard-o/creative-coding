@@ -75,7 +75,6 @@ export class BounceString {
 
 		let prevX = this.points[0].x;
 		let prevY = this.points[0].y;
-
 		ctx.moveTo(prevX, prevY);
 		for(let i = 1; i < this.points.length; i++){
 			const cx = (prevX + this.points[i].x)/2;
@@ -85,7 +84,6 @@ export class BounceString {
 			prevX = this.points[i].x;
 			prevY = this.points[i].y;
 		}
-
 		ctx.lineTo(prevX, prevY);
 		ctx.stroke();
   }
