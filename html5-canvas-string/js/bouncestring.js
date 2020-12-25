@@ -55,7 +55,7 @@ export class BounceString {
 			moveY,
 			this.detect
 		)){
-			 this.detect = 300;
+			 this.detect = 500;
 			 let tx = (this.points[1].ox + moveX) / 2;
 			 let ty = moveY;
 			 this.points[1].vx = tx - this.points[1].x;

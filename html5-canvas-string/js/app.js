@@ -35,8 +35,8 @@ class App {
 
     this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
-		const xGap = 15;
-		const yGap = 15;
+		const xGap = 20;
+		const yGap = 20;
 		const y1 = xGap;
 		const y2 = this.stageHeight - yGap;
 		const total = Math.floor((this.stageWidth - xGap) / xGap);
@@ -61,7 +61,7 @@ class App {
 
     if (this.strings.length > 0) {
       for (let i = 0; i < this.strings.length; i++) {
-        this.strings[i].animate(this.ctx, this.ball.x, this.ball.y);
+        this.strings[i].animate(this.ctx, this.moveX, this.moveY);
       }
 		}
 		
