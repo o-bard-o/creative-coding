@@ -23,7 +23,7 @@ export class Visual{
             stage.removeChild(this.container);
         }
 
-        this.pos = this.text.setText('누룽맘', 2, stageWidth, stageHeight);
+        this.pos = this.text.setText('MDAG', 2, stageWidth, stageHeight);
 
         this.container = new PIXI.ParticleContainer(
             this.pos.length,
