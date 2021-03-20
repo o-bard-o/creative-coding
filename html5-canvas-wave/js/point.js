@@ -3,13 +3,13 @@ export class Point {
         this.x = x;
         this.y = y;
         this.fixedY = y;
-        this.speed = 0.1;
+        this.speed = 0.01;
         this.cur = index;
-        this.max = Math.random() * 50 + 100;
+        this.max = Math.random() * 10 + 100;
     }
 
     update(){
         this.cur += this.speed;
-        this.y = this.fixedY + (Math.sin(this.cur) * this.max);
+        this.y = this.fixedY + (Math.sin(10*this.cur) * this.max);
     } 
 }
