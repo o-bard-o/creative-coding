@@ -1,10 +1,9 @@
 import React from 'react';
-import Ball from './components/Ball';
+// import Wave from './components/Wave';
+import Circle from "./components/Circle";
 
 function App() {
-  return (
-    <Ball/>
-  );
+  return <Circle />
 }
 
 export default App;

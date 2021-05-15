@@ -1,6 +1,13 @@
 import { useRef, useEffect } from 'react';
-
-const useCanvas = (draw: (arg0: any, arg1: number, arg2: number, arg3: number) => void) => {
+interface drawFunction {
+  (
+      ctx: any,
+      frameCount: number,
+      stageWidth: number,
+      stageHeight: number,
+  ): void
+}
+const useCanvas = (draw: drawFunction) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
   useEffect(() => {
@@ -15,12 +22,14 @@ const useCanvas = (draw: (arg0: any, arg1: number, arg2: number, arg3: number) =
       stageWidth = window.innerWidth;
       stageHeight = window.innerHeight;
 
-      canvas!.width = stageWidth * ratio;
-      canvas!.height = stageHeight * ratio;
+      if(canvas) {
+        canvas.width = stageWidth * ratio;
+        canvas.height = stageHeight * ratio;
 
-      canvas!.style.width = stageWidth + 'px';
-      canvas!.style.height = stageHeight + 'px';
-      canvas!.style.position = 'absolute';
+        canvas.style.width = stageWidth + 'px';
+        canvas.style.height = stageHeight + 'px';
+        canvas.style.position = 'absolute';
+      }
       document.body.style.margin = '0';
 
       ctx?.scale(ratio, ratio);
